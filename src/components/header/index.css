@@ -1,0 +1,64 @@
+.page-header{
+    display: flex;
+    justify-content: space-between;
+    margin: 1% 5% !important;
+    padding: 1% !important;
+    border-bottom: 1px solid rgb(12, 12, 12) !important;
+}
+.page-header-action-buttons{
+    display: flex;
+    width: 20% !important;
+}
+.page-header-action-buttons>button{
+    margin: 0% 4% !important;
+}
+.page-header-action-buttons>a, .page-header-action-buttons>button{
+    border: none;
+    border-radius: 5px;
+    padding: 1% 10% !important;
+    text-decoration: none;
+    cursor: pointer;
+}
+.page-header-action-buttons>*:focus{
+    outline: none;
+}
+
+.page-header-action-button__add,.page-header-action-button__save{
+    background-color: #00a1de !important;
+    font-weight: bold;
+    color: white !important;
+}
+.page-header-action-button__add:hover,.page-header-action-button__save:hover{
+    background-color: #0497cc !important;
+}
+
+.page-header-action-button__mass-delete,.page-header-action-button__cancel{
+    background-color: rgb(243, 32, 32) !important;
+    font-weight: bold;
+    color: white !important;    
+}
+.page-header-action-button__mass-delete:hover,.page-header-action-button__cancel:hover{
+    background-color: rgb(235, 0, 0) !important;
+}
+.page-header-title-name{
+    font-size: 24px !important;
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 800px){
+    .page-header-title-name{
+        font-size: 18px !important;
+    }
+    .page-header{
+        margin: 1% !important;
+    }
+    .page-header-action-buttons{
+        width: 60% !important;
+    }
+}
+
+@media only screen and (min-width: 769px) and (max-width:1100px){
+    .page-header-action-buttons{
+        width: 40% !important
+    }
+}

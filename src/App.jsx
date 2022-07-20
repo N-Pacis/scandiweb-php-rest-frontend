@@ -3,7 +3,7 @@ import {
   BrowserRouter as Router, Route, Switch
 } from "react-router-dom";
 import PageNotFound from "./views/PageNotFound";
-import ProductsList from "./views/ProductsList";
+import ProductsPage from "./views/ProductsPage";
 
 export default function App() {
   
@@ -12,7 +12,7 @@ export default function App() {
     <Router>
       <Switch>
         <Route exact path="/">
-          <ProductsList />
+          <ProductsPage />
         </Route>
       
         <Route component={PageNotFound} />

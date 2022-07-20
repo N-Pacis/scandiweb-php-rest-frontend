@@ -16,6 +16,7 @@
 }
 body{
   overflow-x: hidden !important;
+  color: --dark;
 }
 .not-found-container{
   width: 100%;
@@ -43,4 +44,7 @@ body{
   text-decoration: underline;
   cursor: pointer;
   font-size: 16px !important;
+}
+.page{
+  min-height: 90vh !important;
 }
