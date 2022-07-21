@@ -9,7 +9,7 @@ const ProductCard = ({
     const [productType,setProductType] = useState('');
     
     useEffect(()=>{
-        switch(product?.product_type){
+        switch(product?.Product_Type){
             case 'DVD':
                 setProductType('DVD');
                 break;
@@ -29,15 +29,15 @@ const ProductCard = ({
         <div className={`product-card ${selected && 'product-card-selected'}`}>
             <input type="checkbox" className="delete-checkbox" onChange={()=>handleSelection(product?.id)}/>
             <div className='product-card-description'>
-                <p className='product-sku'>{product?.sku}</p>
-                <p className='product-name'>{product?.name}</p>
-                <p className='product-price'>{product?.price} $</p>
+                <p className='product-sku'>{product?.SKU}</p>
+                <p className='product-name'>{product?.Name}</p>
+                <p className='product-price'>{product?.Price} $</p>
                 {
                     
                     productType == 'DVD' && (
                         <div className='product-specific'>
                             <span className='product-specific-name'>Size: </span>
-                            <p className='product-specific-value'>{product?.size} MB</p>
+                            <p className='product-specific-value'>{product?.Size} MB</p>
                         </div>
                     )
                 }
@@ -45,7 +45,7 @@ const ProductCard = ({
                     productType == 'Book' && (
                         <div className='product-specific'>
                             <span className='product-specific-name'>Weight: </span>
-                            <p className='product-specific-value'>{product?.weight} KG</p>
+                            <p className='product-specific-value'>{product?.Weight} KG</p>
                         </div>
                     )
                 }
@@ -53,7 +53,7 @@ const ProductCard = ({
                     productType == 'Furniture' && (
                         <div className='product-specific'>
                             <span className='product-specific-name'>Dimension: </span>
-                            <p className='product-specific-value'>{product?.length}x{product?.width}x{product?.height} </p>
+                            <p className='product-specific-value'>{product?.Length}x{product?.Width}x{product?.Height} </p>
                         </div>
                     )
                 }

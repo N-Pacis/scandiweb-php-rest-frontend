@@ -41,7 +41,7 @@ export function fetchProducts() {
     return async (dispatch, getState) => {
         dispatch(getProducts());
         try {
-            const url = `/products`;
+            const url = `/`;
 
             let productsFromBackend = await axios.get(`${ENDPOINT}${url}`);
             dispatch(getProductsSuccess(productsFromBackend?.data));
@@ -53,7 +53,7 @@ export function fetchProducts() {
 
 export async function postProduct(dataToPost) {
     try {
-        const url = `/products`;
+        const url = `/`;
         let response = await axios.post(`${ENDPOINT}${url}`, dataToPost);
         return { success: true, data: response.data };
     } catch (err) {

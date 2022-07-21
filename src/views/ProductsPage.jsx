@@ -14,6 +14,7 @@ const ProductsPage = ({
 
     useEffect(() => {
         dispatch(fetchProducts())
+        console.warn(products)
     }, [])
 
     const handleSelection = (id) => {
