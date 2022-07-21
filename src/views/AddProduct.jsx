@@ -45,6 +45,10 @@ const AddProduct = ({
 
     const productTypes = [
         {
+            value: "",
+            label:""
+        },
+        {
             value: "DVD",
             label: "DVD"
         },
