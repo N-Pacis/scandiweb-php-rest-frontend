@@ -51,10 +51,22 @@ export function fetchProducts() {
     };
 }
 
+
 export async function postProduct(dataToPost) {
     try {
         const url = `/`;
         let response = await axios.post(`${ENDPOINT}${url}`, dataToPost);
+        return { success: true, data: response.data };
+    } catch (err) {
+        return { sucess: false, err };
+    }
+}
+
+export async function deleteProducts(dataToDelete) {
+    console.warn(dataToDelete)
+    try {
+        const url = `/`;
+        let response = await axios.put(`${ENDPOINT}${url}`, dataToDelete);
         return { success: true, data: response.data };
     } catch (err) {
         return { sucess: false, err };

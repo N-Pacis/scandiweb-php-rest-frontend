@@ -1,12 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import "./index.css";
 
 const Header = ({
     title,
-    type
+    type,
+    handleDeletion
 }) => {
-
+    const history = useHistory()
+    const handleNavigation = (url) =>{
+        history.push(url)
+    }
     return (
         <div className={`page-header`}>
             <div className='page-header-title'>
@@ -16,15 +20,15 @@ const Header = ({
                 {
                     type == 'list' && (
                         <>
-                            <Link to={'/add-product'} className='page-header-action-button__add'>Add</Link>
-                            <button className='page-header-action-button__mass-delete' id='delete-product-btn'>Mass Delete</button>
+                            <button className='page-header-action-button__add' onClick={()=>handleNavigation("/add-product")}>ADD</button>
+                            <button className='page-header-action-button__mass-delete' id='delete-product-btn' onClick={handleDeletion}>MASS DELETE</button>
                         </>
                     )
                 }
                 {
                     type == 'add' && (
                         <>
-                                <Link to={'/'} className='page-header-action-button__cancel'>Cancel</Link>
+                                <button onClick={()=>handleNavigation("/")} className='page-header-action-button__cancel'>Cancel</button>
                         </>
                     )
                 }
