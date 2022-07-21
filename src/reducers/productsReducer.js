@@ -2,7 +2,9 @@ import * as actions from "../actions/productsAction";
 
 export const initialState = {
   products: [],
-  loading: false
+  loading: false,
+  sending: false,
+  hasErrors: false,
 };
 export default function productsReducer(state = initialState, action) {
   switch (action.type) {
@@ -14,8 +16,18 @@ export default function productsReducer(state = initialState, action) {
         loading: false
       };
     case actions.GET_PRODUCTS_FAILURE:
-      return { ...state, loading: false};
-    
+      return { ...state, loading: false };
+    case actions.SEND_PRODUCT:
+      return { ...state, sending: true };
+    case actions.SEND_PRODUCT_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        hasErrors: false,
+        sending: false,
+      };
+    case actions.SEND_PRODUCT_FAILURE:
+      return { ...state, loading: false, hasErrors: true, sending: false };
     default:
       return state;
   }

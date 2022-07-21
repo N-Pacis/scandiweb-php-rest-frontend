@@ -24,8 +24,7 @@ const Header = ({
                 {
                     type == 'add' && (
                         <>
-                            <button type='submit' className='page-header-action-button__save'>Save</button>
-                            <Link to={'/'} className='page-header-action-button__cancel'>Cancel</Link>
+                                <Link to={'/'} className='page-header-action-button__cancel'>Cancel</Link>
                         </>
                     )
                 }
