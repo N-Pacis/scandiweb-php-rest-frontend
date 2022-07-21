@@ -36,15 +36,17 @@ const AddProduct = ({
         setLocalSending(false)
     }
 
-    const selectHandler = (payload) => {
-        var value = payload.value;
+    const selectHandler = event => {
+        console.warn("Hello")
+        console.warn(event.target.value)
+        var value = event.target.value;
         setProductType(value);
     };
 
     const productTypes = [
         {
             value: "DVD",
-            label: "DVD/DISC"
+            label: "DVD"
         },
         {
             value: "Book",
@@ -131,23 +133,25 @@ const AddProduct = ({
                     <div className='form-group'>
                         <div className='form-control-group'>
                             <p>Type Switcher:</p>
-                            <Select
-                                options={productTypes}
-                                name="productType"
-                                onChange={(payload) =>
-                                    selectHandler({ ...payload })
-                                }
-                                id="productType"
+                            <select
+                                onChange={selectHandler}
+                                value={productType}
+                                name='productType'
+                                id='productType'
                                 className={`select-product-type ${errors.productType ? "error-input" : ""}`}
-                                placeholder={
-                                    <div className="select-placeholder-text">
-                                        Type Switcher
-                                    </div>
+                                placeholder={'Type Switcher'}
+                            >
+                                    {
+                                    productTypes.map((option) => (
+                                        <option key={option.value} value={option.value}>
+                                            {option.label}
+                                        </option>
+                                    ))
                                 }
-                            />
+                            </select>
                         </div>
                         {errors.productType && (
-                            <p className="error-input">Product Type is required</p>
+                            <p className="error">Product Type is required</p>
                         )}
                     </div>
                     {
@@ -203,7 +207,7 @@ const AddProduct = ({
                             <>
                                 <p className='product-description'>Please, provide dimensions</p>
                                 <div className='form-group'>
-                                    <div className='form-control-group'>    
+                                    <div className='form-control-group'>
                                         <label htmlFor='height'>Height(CM):</label>
                                         <input
                                             name="height"
