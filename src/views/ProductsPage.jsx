@@ -30,7 +30,6 @@ const ProductsPage = ({
     }
 
     const handleDeletion = async()=>{
-        console.log("deleting")
         await deleteProducts({
             ids: selectedProducts
         })

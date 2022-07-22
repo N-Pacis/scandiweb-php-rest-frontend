@@ -58,12 +58,11 @@ export async function postProduct(dataToPost) {
         let response = await axios.post(`${ENDPOINT}${url}`, dataToPost);
         return { success: true, data: response.data };
     } catch (err) {
-        return { sucess: false, err };
+        return { success: false,err };
     }
 }
 
 export async function deleteProducts(dataToDelete) {
-    console.warn(dataToDelete)
     try {
         const url = `/`;
         let response = await axios.put(`${ENDPOINT}${url}`, dataToDelete);

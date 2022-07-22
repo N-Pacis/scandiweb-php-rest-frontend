@@ -25,20 +25,17 @@ const AddProduct = ({
         setLocalSending(true)
         data.productType = productType
         let response = await postProduct(data)
-        console.log(response)
         if (response.success) {
             history.push("/")
             setError("")
         }
         else {
-            setError(response?.response?.data?.error || "Error occured")
+            setError(response?.err?.response?.data?.error || "Error occured")
         }
         setLocalSending(false)
     }
 
     const selectHandler = event => {
-        console.warn("Hello")
-        console.warn(event.target.value)
         var value = event.target.value;
         setProductType(value);
     };
