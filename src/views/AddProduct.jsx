@@ -21,7 +21,7 @@ const AddProduct = ({
         formState: { errors },
     } = useForm();
 
-    const onSubmit = async (data) => {
+    const onSubmit = async (data) => {  
         setLocalSending(true)
         data.productType = productType
         let response = await postProduct(data)
